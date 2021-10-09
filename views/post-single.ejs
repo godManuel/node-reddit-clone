@@ -4,6 +4,20 @@
         <h2><%= post.title %></a></h2>
         <p><%= post.summary %></p>
         <a href="#"><%= post.url %></a>
+        <form action="/posts/<%= post._id %>/comments" method="POST">
+          <textarea
+            name="content"
+            class="form-control"
+            placeholder="Make a comment"
+          ></textarea>
+          <input type="submit" value="Save" class="btn btn-primary" />
+        </form>
+        <div class="comments">
+          <h5>Comments:</h5>
+         <% post.comments.forEach(comment => { %>
+            <p><%= comment.content %></p>
+        <%}) %>
+        </div>
       </div>
     </div>
 </div>

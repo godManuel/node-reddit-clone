@@ -20,6 +20,7 @@ app.set("view engine", "ejs");
 
 // Use Routes
 app.use("/", require("./routes/posts"));
+app.use("/", require("./routes/comments"));
 
 // Set Port
 const port = 4500;

@@ -31,7 +31,6 @@ router.get("/", (req, res) => {
     .lean()
     .then((posts) => {
       res.render("posts-index", { posts });
-      console.log(posts);
     })
     .catch((err) => {
       console.log(err.message);
@@ -42,6 +41,7 @@ router.get("/", (req, res) => {
 router.get("/posts/:id", (req, res) => {
   Post.findById(req.params.id)
     .lean()
+    .populate("comments")
     .then((post) => {
       res.render("post-single", { post });
     })
