@@ -50,5 +50,17 @@ router.get("/posts/:id", (req, res) => {
     });
 });
 
+// GET - Display Post(s) for Subreddit
+router.get("/n/:subreddit", (req, res) => {
+  Post.find({ subreddit: req.params.subreddit })
+    .lean()
+    .then((posts) => {
+      res.render("posts-index", { posts });
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+});
+
 // Export Router
 module.exports = router;

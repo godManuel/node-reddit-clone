@@ -5,6 +5,9 @@
       <h2><a href="/posts/<%= post._id %>"><%= post.title %></a></h2>
       <p><%= post.summary %></p>
       <a href="#"><%= post.url %></a>
+      <span>
+        <a href="/n/<%= post.subreddit%>"> <%= post.subreddit %> </a>
+      </span>
     </div>
     <% }) %>
   </div>
