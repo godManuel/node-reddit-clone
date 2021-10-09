@@ -19,12 +19,7 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 
 // Use Routes
-app.use("/posts", require("./routes/posts"));
-
-// GET - Index Route
-app.get("/", (req, res) => {
-  res.render("home");
-});
+app.use("/", require("./routes/posts"));
 
 // Set Port
 const port = 4500;

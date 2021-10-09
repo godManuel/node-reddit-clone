@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="posts">
+    <% posts.forEach(post => {%>
+    <div class="post">
+      <h2><a href="/posts/<%= post._id %>"><%= post.title %></a></h2>
+      <p><%= post.summary %></p>
+      <a href="#"><%= post.url %></a>
+    </div>
+    <% }) %>
+  </div>
+</div>
