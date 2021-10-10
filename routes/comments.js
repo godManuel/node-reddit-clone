@@ -17,7 +17,6 @@ router.post("/posts/:postId/comments", (req, res) => {
     .then(() => Post.findById(req.params.postId))
     .then((post) => {
       post.comments.unshift(comment);
-      return post.save();
     })
     .then(() => {
       res.redirect("/");
